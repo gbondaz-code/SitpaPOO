@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> ***** Alta de Nuevos Pacientes ***** </h1>
+    
+
+    <form action="#" th:action="@{/pacientes/agregar}" th:object="${pacientes}" method="post">	
+        
+        <label> id: </label>
+            <input type="number" th:field="*{id}" /><br/>
+
+        <label> nombre: </label>
+            <input type="text" th:field="*{nombre}" /><br/> 
+            
+        <label> apellido: </label>
+            <input type="text" th:field="*{apellido}" /><br/>
+
+        <label> fechaNacimiento: </label>
+            <input type="date" th:field="*{fechaNacimiento}" /><br/>
+
+        <label> telefono: </label>
+            <input type="number" th:field="*{telefono}" /><br/>
+
+        <label> recomienda: </label>
+            <input type="text" th:field="*{recomienda}" /><br/>
+
+        <label> fechaInicio: </label>
+            <input type="date" th:field="*{fechaInicio}" /><br/>
+
+        <label> coberturaMedica: </label>
+            <input type="text" th:field="*{coberturaMedica}" /><br/>
+
+        <label> sesionesPorMes: </label>
+            <input type="number" th:field="*{sesionesPorMes}" /><br/>
+
+        <label> sesionesAdeudadas: </label>
+            <input type="number" th:field="*{sesionesAdeudadas}" /><br/>
+        
+        
+    </form>    
+
+</body>
+</html>

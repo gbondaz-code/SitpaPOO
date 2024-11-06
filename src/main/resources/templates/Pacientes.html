@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html xmlns:th="http://www.thymeleaf.org"></html>
+    <title>Document</title>
+</head>
+<body>
+    <h1> *****Sistema de Turnos para Pacientes***** </h1>
+    <table>
+      <thead>
+            <th>id</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>fechaNacimiento</th>
+            <th>telefono</th>
+            <th>recomienda</th>
+            <th>fechaInicio</th>
+            <th>coberturaMedica</th>
+            <th>sesionesPorMes</th>
+            <th>sesionesAdeudadas</th>
+      </thead> 
+      <tbody>
+            <tr th:each="paciente : ${pacientes}">
+            <td th:text="${paciente.id}"></td>
+            <td th:text="${paciente.nombre}"></td>
+            <td th:text="${paciente.apellido}"></td>
+            <td th:text="${paciente.fechaNacimiento}"></td>
+            <td th:text="${paciente.telefono}"></td>
+            <td th:text="${paciente.recomienda}"></td>
+            <td th:text="${paciente.fechaInicio}"></td>
+            <td th:text="${paciente.coberturaMedica}"></td>
+            <td th:text="${paciente.sesionesPorMes}"></td>
+            <td th:text="${paciente.sesionesAdeudadas}"></td>
+
+            <td>
+                <a th:href="@{/pacientes/editar/{id}(id=${paciente.id})}">Editar</a>
+                <a th:href="@{/pacientes/eliminar/{id}(id=${paciente.id})}">Eliminar</a>
+
+                <td>
+                   
+                    <a th:href="@{/pacientes/editar/{id}(id=${paciente.id})}"><input type="button" name="" value="Editar"></a>
+        
+                    <a th:href="@{/pacientes/eliminar/{id}(id=${paciente.id})}"><input type="button" name="" value="Eliminar"></a>
+        
+                    <a href="Editar.html"> <input type="button" name="" value="Editar"></a> 
+              
+                    <a href="Nuevo.html"> <input type="button" name="" value="Nuevo"></a> 
+        
+                     <input type="Submit" name="" value="Guardar"><br>
+        
+                    
+        
+                    
+            </td>
+        </tr>
+      </tbody>      
+
+    </table>
+</body>
+</html>
+
+
+    <!--
+    CREAR EN CONTROLADOR POSTMAPING
+    
+    BOTON:
+	  <input type="button" name="" value="Agregar Paciente"><br>
+    <a href="AgregarPacientes.html">  </a> </br></br>
+
+     BOTON:
+	  <input type="button" name="" value="Turnos"><br>
+    <a href="http://localhost:8080/Turnos.html">  </a> </br></br>-->
